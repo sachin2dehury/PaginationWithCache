@@ -10,9 +10,9 @@ import github.sachin2dehury.pagingwithcache.data.database.BeerDb
 import github.sachin2dehury.pagingwithcache.data.paging.BeerRemoteMediator
 import github.sachin2dehury.pagingwithcache.data.repository.BeerRepository
 import github.sachin2dehury.pagingwithcache.data.toBeer
+import javax.inject.Inject
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
-import javax.inject.Inject
 
 @HiltViewModel
 class BeerViewModel @Inject constructor(

@@ -25,7 +25,6 @@ fun BeerScreen(
     val context = LocalContext.current
     LaunchedEffect(key1 = beerList.loadState) {
         if (beerList.loadState.refresh is LoadState.Error) {
-
             val exception = beerList.loadState.refresh as LoadState.Error
             println("Preeti : $exception")
             Toast.makeText(

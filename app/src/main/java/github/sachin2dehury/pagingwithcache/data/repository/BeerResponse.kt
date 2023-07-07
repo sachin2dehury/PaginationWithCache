@@ -1,9 +1,7 @@
 package github.sachin2dehury.pagingwithcache.data.repository
 
-
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import java.lang.reflect.Method
 
 @JsonClass(generateAdapter = true)
 data class BeerResponse(
@@ -20,5 +18,5 @@ data class BeerResponse(
     val name: String? = null,
     val ph: Double? = null,
     val srm: Double? = null,
-    val tagline: String? = null,
+    val tagline: String? = null
 )

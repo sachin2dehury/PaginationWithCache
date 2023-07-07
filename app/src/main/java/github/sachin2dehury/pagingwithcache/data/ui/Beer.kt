@@ -10,5 +10,5 @@ data class Beer(
     val name: String? = null,
     val ph: Double? = null,
     val srm: Double? = null,
-    val tagline: String? = null,
+    val tagline: String? = null
 )
