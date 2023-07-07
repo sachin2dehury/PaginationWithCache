@@ -31,7 +31,7 @@ class BeerRemoteMediator(
                 LoadType.APPEND -> {
                     val lastItem = state.lastItemOrNull()
                     if (lastItem != null) {
-                        (lastItem.id / state.config.pageSize) + 1
+                        ((lastItem.id ?: 0) / state.config.pageSize) + 1
                     } else {
                         1
                     }

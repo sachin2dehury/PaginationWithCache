@@ -17,5 +17,5 @@ data class BeerEntity(
     val srm: Double? = null,
     val tagline: String? = null,
     @PrimaryKey
-    val id: Int = 0,
+    val id: Int? = 0,
 )
