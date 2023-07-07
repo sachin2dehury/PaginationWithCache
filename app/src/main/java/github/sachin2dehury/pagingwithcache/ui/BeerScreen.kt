@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
@@ -24,15 +25,22 @@ fun BeerScreen(
     val context = LocalContext.current
     LaunchedEffect(key1 = beerList.loadState) {
         if (beerList.loadState.refresh is LoadState.Error) {
+
+            val exception = beerList.loadState.refresh as LoadState.Error
+            println("Preeti : $exception")
             Toast.makeText(
                 context,
-                "Error ${(beerList.loadState.refresh as LoadState.Error).error.message}",
+                "Error ${exception.error.message}",
                 Toast.LENGTH_LONG
             ).show()
         }
     }
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+    ) {
         if (beerList.loadState.refresh is LoadState.Loading) {
             CircularProgressIndicator(
                 modifier = Modifier.align(Alignment.Center)

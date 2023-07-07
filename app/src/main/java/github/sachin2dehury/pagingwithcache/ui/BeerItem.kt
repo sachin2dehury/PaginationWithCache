@@ -15,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -61,7 +62,7 @@ fun BeerItem(
 
                 Text(
                     text = beer.tagline.orEmpty(),
-                    style = MaterialTheme.typography.bodySmall,
+                    style = MaterialTheme.typography.labelSmall,
                     color = Color.Gray,
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -70,7 +71,7 @@ fun BeerItem(
 
                 Text(
                     text = beer.description.orEmpty(),
-                    style = MaterialTheme.typography.displaySmall,
+                    style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.fillMaxWidth()
                 )
 
@@ -78,9 +79,10 @@ fun BeerItem(
 
                 Text(
                     text = "First brewed in ${beer.firstBrewed}",
-                    style = MaterialTheme.typography.labelSmall,
+                    style = MaterialTheme.typography.bodySmall,
                     modifier = Modifier.fillMaxWidth(),
-                    textAlign = TextAlign.End
+                    textAlign = TextAlign.End,
+                    fontStyle = FontStyle.Italic
                 )
             }
         }
